@@ -2727,7 +2727,7 @@ static void fill_all_stream_timings(AVFormatContext *ic)
         }
     }
 }
-
+//ts流通过文件大小和码流估计时长
 static void estimate_timings_from_bit_rate(AVFormatContext *ic)
 {
     int64_t filesize, duration;
@@ -2784,7 +2784,7 @@ static void estimate_timings_from_bit_rate(AVFormatContext *ic)
 #define DURATION_MAX_READ_SIZE 250000LL
 #define DURATION_MAX_RETRY 6
 
-/* only usable for MPEG-PS streams */
+/* only usable for MPEG-PS streams */ts流的时长通过PTS计算
 static void estimate_timings_from_pts(AVFormatContext *ic, int64_t old_offset)
 {
     AVPacket pkt1, *pkt = &pkt1;
